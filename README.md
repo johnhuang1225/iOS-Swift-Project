@@ -1,2 +1,7 @@
 # iOS-Swift-Project
-swift demo project
+John Huang Swift practice project collection
+
+## DBFM
+豆瓣電臺練習
+
+
