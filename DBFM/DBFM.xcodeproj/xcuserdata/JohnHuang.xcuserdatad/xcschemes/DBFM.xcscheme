@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "642554E91B07309600F58728"
+               BlueprintIdentifier = "64A3A2541AFE512D00189D57"
                BuildableName = "DBFM.app"
                BlueprintName = "DBFM"
                ReferencedContainer = "container:DBFM.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "642554FE1B07309600F58728"
+               BlueprintIdentifier = "64A3A2691AFE512D00189D57"
                BuildableName = "DBFMTests.xctest"
                BlueprintName = "DBFMTests"
                ReferencedContainer = "container:DBFM.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "642554FE1B07309600F58728"
+               BlueprintIdentifier = "64A3A2691AFE512D00189D57"
                BuildableName = "DBFMTests.xctest"
                BlueprintName = "DBFMTests"
                ReferencedContainer = "container:DBFM.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "642554E91B07309600F58728"
+            BlueprintIdentifier = "64A3A2541AFE512D00189D57"
             BuildableName = "DBFM.app"
             BlueprintName = "DBFM"
             ReferencedContainer = "container:DBFM.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "642554E91B07309600F58728"
+            BlueprintIdentifier = "64A3A2541AFE512D00189D57"
             BuildableName = "DBFM.app"
             BlueprintName = "DBFM"
             ReferencedContainer = "container:DBFM.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "642554E91B07309600F58728"
+            BlueprintIdentifier = "64A3A2541AFE512D00189D57"
             BuildableName = "DBFM.app"
             BlueprintName = "DBFM"
             ReferencedContainer = "container:DBFM.xcodeproj">
