@@ -31,6 +31,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     // 媒體播放器
     var audioPlayer: MPMoviePlayerController = MPMoviePlayerController()
     
+    // 計時器
+    var timer:NSTimer?
+    // 時間標籤
+    @IBOutlet weak var playTime: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,6 +181,35 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.audioPlayer.stop()
         self.audioPlayer.contentURL = NSURL(string: url)
         self.audioPlayer.play()
+        // 首先停掉計時器
+        timer?.invalidate()
+        playTime.text = "00:00"
+        // 啟動計時器
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "onUpdate", userInfo: nil, repeats: true)
+        
+    }
+    
+    // 計時器更新方法
+    func onUpdate() {
+        let c = audioPlayer.currentPlaybackTime
+        if c > 0.0 {
+            let all:Int = Int(c)
+            let m:Int = all % 60
+            let f:Int = Int(all / 60)
+            var time:String = ""
+            if f < 10 {
+                time = "0\(f):"
+            } else {
+                time = "\(f):"
+            }
+            
+            if m < 10 {
+                time += "0\(m)"
+            } else {
+                time += "\(m)"
+            }
+            playTime.text = time
+        }
     }
     
     

@@ -170,6 +170,7 @@
                     <connections>
                         <outlet property="bg" destination="lQJ-Zt-X9Q" id="alK-cf-7eR"/>
                         <outlet property="iv" destination="pJD-QT-3XT" id="dtv-3k-aAP"/>
+                        <outlet property="playTime" destination="tNc-Zu-i9H" id="oea-hx-iAa"/>
                         <outlet property="tv" destination="lXa-k8-9Lg" id="4fX-Jm-NB9"/>
                     </connections>
                 </viewController>
@@ -229,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eT-4g-Qx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="948"/>
+            <point key="canvasLocation" x="837" y="327"/>
         </scene>
     </scenes>
     <resources>
