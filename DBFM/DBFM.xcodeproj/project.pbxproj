@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6401E3B21B0B87B400B42E7F /* EkoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6401E3B11B0B87B400B42E7F /* EkoButton.swift */; };
 		6425535D1B0396A000F58728 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425535C1B0396A000F58728 /* ChannelViewController.swift */; };
 		642553601B0398BA00F58728 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425535E1B0398BA00F58728 /* Alamofire.swift */; };
 		642553611B0398BA00F58728 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425535F1B0398BA00F58728 /* SwiftyJSON.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6401E3B11B0B87B400B42E7F /* EkoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoButton.swift; sourceTree = "<group>"; };
 		6425535C1B0396A000F58728 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		6425535E1B0398BA00F58728 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		6425535F1B0398BA00F58728 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				64A3A25A1AFE512D00189D57 /* AppDelegate.swift */,
 				64A3A25C1AFE512D00189D57 /* ViewController.swift */,
 				6425535C1B0396A000F58728 /* ChannelViewController.swift */,
+				6401E3B11B0B87B400B42E7F /* EkoButton.swift */,
 				64A3A27A1AFE5DF100189D57 /* EkoImage.swift */,
 				642553621B0398E000F58728 /* HttpController.swift */,
 				6425535E1B0398BA00F58728 /* Alamofire.swift */,
@@ -232,6 +235,7 @@
 				64A3A25D1AFE512D00189D57 /* ViewController.swift in Sources */,
 				642553631B0398E000F58728 /* HttpController.swift in Sources */,
 				642553611B0398BA00F58728 /* SwiftyJSON.swift in Sources */,
+				6401E3B21B0B87B400B42E7F /* EkoButton.swift in Sources */,
 				6425535D1B0396A000F58728 /* ChannelViewController.swift in Sources */,
 				64A3A25B1AFE512D00189D57 /* AppDelegate.swift in Sources */,
 			);

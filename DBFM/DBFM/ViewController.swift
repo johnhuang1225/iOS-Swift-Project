@@ -36,6 +36,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     // 時間標籤
     @IBOutlet weak var playTime: UILabel!
     
+    @IBOutlet weak var progress: UIImageView!
+    
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnPlay: EkoButton!
+    @IBOutlet weak var btnPre: UIButton!
+    // 記錄當前播放歌曲
+    var currIndex:Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +67,36 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         // tableView背景透明
         tv.backgroundColor = UIColor.clearColor()
+        
+        // 監聽按鈕事件
+        btnPlay.addTarget(self, action: "onPlay:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnNext.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnPre.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
     }
-
+    
+    func onPlay(btn: EkoButton) {
+        if btn.isPlay {
+            audioPlayer.play()
+        } else {
+            audioPlayer.pause()
+        }
+    }
+    
+    func onClick(btn: UIButton) {
+        if btn == btnNext {
+            currIndex++
+            if currIndex > self.tableData.count - 1{
+                currIndex = 0
+            }
+        } else {
+            currIndex--
+            if currIndex < 0 {
+                currIndex = self.tableData.count - 1
+            }
+        }
+        onSelectRow(currIndex)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -181,6 +217,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.audioPlayer.stop()
         self.audioPlayer.contentURL = NSURL(string: url)
         self.audioPlayer.play()
+        
+        btnPlay.onPlay()
+        
         // 首先停掉計時器
         timer?.invalidate()
         playTime.text = "00:00"
@@ -193,6 +232,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func onUpdate() {
         let c = audioPlayer.currentPlaybackTime
         if c > 0.0 {
+            // 歌曲總時間
+            let t = audioPlayer.duration
+            // 計算百分比
+            let pro:CGFloat = CGFloat(c/t)
+            // 按照百分比顯示進度條的寬度
+            progress.frame.size.width = view.frame.size.width * pro
+            
+            
+            
             let all:Int = Int(c)
             let m:Int = all % 60
             let f:Int = Int(all / 60)
