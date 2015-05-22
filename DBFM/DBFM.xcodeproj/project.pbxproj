@@ -19,6 +19,8 @@
 		64A3A2651AFE512D00189D57 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A3A2631AFE512D00189D57 /* LaunchScreen.xib */; };
 		64A3A2711AFE512D00189D57 /* DBFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A3A2701AFE512D00189D57 /* DBFMTests.swift */; };
 		64A3A27B1AFE5DF100189D57 /* EkoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A3A27A1AFE5DF100189D57 /* EkoImage.swift */; };
+		64E351C81B0F7A2C00505335 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E351C71B0F7A2C00505335 /* HRToast+UIView.swift */; };
+		64E351CA1B0F7A8900505335 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E351C91B0F7A8900505335 /* OrderButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		64A3A26F1AFE512D00189D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64A3A2701AFE512D00189D57 /* DBFMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFMTests.swift; sourceTree = "<group>"; };
 		64A3A27A1AFE5DF100189D57 /* EkoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoImage.swift; sourceTree = "<group>"; };
+		64E351C71B0F7A2C00505335 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
+		64E351C91B0F7A8900505335 /* OrderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +98,11 @@
 				6425535C1B0396A000F58728 /* ChannelViewController.swift */,
 				6401E3B11B0B87B400B42E7F /* EkoButton.swift */,
 				64A3A27A1AFE5DF100189D57 /* EkoImage.swift */,
+				64E351C91B0F7A8900505335 /* OrderButton.swift */,
 				642553621B0398E000F58728 /* HttpController.swift */,
 				6425535E1B0398BA00F58728 /* Alamofire.swift */,
 				6425535F1B0398BA00F58728 /* SwiftyJSON.swift */,
+				64E351C71B0F7A2C00505335 /* HRToast+UIView.swift */,
 				64A3A25E1AFE512D00189D57 /* Main.storyboard */,
 				64A3A2611AFE512D00189D57 /* Images.xcassets */,
 				64A3A2631AFE512D00189D57 /* LaunchScreen.xib */,
@@ -235,8 +241,10 @@
 				64A3A25D1AFE512D00189D57 /* ViewController.swift in Sources */,
 				642553631B0398E000F58728 /* HttpController.swift in Sources */,
 				642553611B0398BA00F58728 /* SwiftyJSON.swift in Sources */,
+				64E351C81B0F7A2C00505335 /* HRToast+UIView.swift in Sources */,
 				6401E3B21B0B87B400B42E7F /* EkoButton.swift in Sources */,
 				6425535D1B0396A000F58728 /* ChannelViewController.swift in Sources */,
+				64E351CA1B0F7A8900505335 /* OrderButton.swift in Sources */,
 				64A3A25B1AFE512D00189D57 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

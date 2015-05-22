@@ -44,6 +44,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     // 記錄當前播放歌曲
     var currIndex:Int = 0
     
+    // 播放按鈕順序
+    @IBOutlet weak var btnOrder: OrderButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +75,50 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         btnPlay.addTarget(self, action: "onPlay:", forControlEvents: UIControlEvents.TouchUpInside)
         btnNext.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
         btnPre.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnOrder.addTarget(self, action: "onOrder:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        // 播放結束通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: audioPlayer)
+        
+    }
+    // 用來判斷歌曲是播放完畢自然結束還是手動結束。true為播放完畢自然結束
+    var isAutoFinish:Bool = true
+    
+    // 手動結束的三種狀況。1:點擊上一首、下一首，2:選擇頻道列表，3:點擊了歌曲列表中的某一行
+    func playFinish() {
+        if isAutoFinish {
+            switch(btnOrder.order){
+            case 1:
+                // 順序播放
+                currIndex++
+                if currIndex > tableData.count - 1 {
+                    currIndex = 0
+                }
+                onSelectRow(currIndex)
+            case 2:
+                // 隨機播放
+                currIndex = random() % tableData.count
+                onSelectRow(currIndex)
+            case 3:
+                // 單曲循環
+                onSelectRow(currIndex)
+            default:
+                "default"
+            }
+        } else {
+            isAutoFinish = true
+        }
+    }
+    
+    func onOrder(btn: OrderButton) {
+        var message:String = ""
+        switch(btn.order) {
+        case 1:message = "順序播放"
+        case 2:message = "隨機播放"
+        case 3:message = "單曲循環"
+        default:message = "你逗我的吧"
+        }
+        self.view.makeToast(message: message, duration: 0.5, position: "center")
     }
     
     func onPlay(btn: EkoButton) {
@@ -83,6 +130,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func onClick(btn: UIButton) {
+        isAutoFinish = false
         if btn == btnNext {
             currIndex++
             if currIndex > self.tableData.count - 1{
@@ -144,6 +192,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         if let channels = json["channels"].array{
             self.channelData = channels
         } else if let song = json["song"].array{
+            isAutoFinish = false
             self.tableData = song
             // 更新tv數據
             self.tv.reloadData()
@@ -163,6 +212,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        isAutoFinish = false
         onSelectRow(indexPath.row)
     }
     
@@ -225,7 +275,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         playTime.text = "00:00"
         // 啟動計時器
         timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "onUpdate", userInfo: nil, repeats: true)
-        
+        isAutoFinish = true
     }
     
     // 計時器更新方法
