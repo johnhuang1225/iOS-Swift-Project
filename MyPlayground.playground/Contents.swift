@@ -128,6 +128,16 @@ var values: NSArray = valueString.componentsSeparatedByString(" ")
 func myFilter<T>(source: [T], predicate: (T)->Bool) -> [T] {
     var result = [T]()
     for item in source {
+        if predicate(item) {
+            result.append(item)
+        }
+    }
+    return result
+}
+
+func distinct<T:Equatable>(source: [T]) -> [T] {
+    var result = [T]()
+    for item in source {
         if !contains(result, item) {
             result.append(item)
         }
@@ -136,7 +146,39 @@ func myFilter<T>(source: [T], predicate: (T)->Bool) -> [T] {
 }
 
 
+typealias Entry = (Character,[String])
 
+func buildIndex(words: [String]) -> [Entry] {
+    var result = [Entry]()
+    
+    var letters = [Character]()
+    for word in words {
+        let char = Character( word.substringToIndex(advance(word.startIndex, 1)).uppercaseString )
+        if !contains(letters, char) {
+            letters.append(char)
+        }
+    }
+    
+    println("letters:\(letters)")
+    
+    
+    for letter in letters {
+        var wordsForLetters = [String]()
+        for word in words {
+            if letter == Character( word.substringToIndex(advance(word.startIndex, 1)).uppercaseString ) {
+                wordsForLetters.append(word)
+            }
+        }
+        result.append( (letter,wordsForLetters) )
+        
+    }
+    return result
+}
+
+let words = ["Cat", "Chicken", "fish", "Dog",
+    "Mouse", "Guinea Pig", "monkey"]
+
+println(buildIndex(words))
 
 
 
