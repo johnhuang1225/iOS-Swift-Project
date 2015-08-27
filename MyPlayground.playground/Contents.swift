@@ -121,6 +121,36 @@ var keys: NSArray = keyString.componentsSeparatedByString(" ")
 let valueString: NSString = "john 40 65"
 var values: NSArray = valueString.componentsSeparatedByString(" ")
 
-let john = NSDictionary(objects: ["john","40","65"], forKeys: ["name","age","weight"]).map{
-    Human(name: $0["name"] as? String, age: $0["age"] as? String, weight: $0["weight"] as? String)
+
+
+// ======= Generic
+
+func myFilter<T>(source: [T], predicate: (T)->Bool) -> [T] {
+    var result = [T]()
+    for item in source {
+        if !contains(result, item) {
+            result.append(item)
+        }
+    }
+    return result
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
